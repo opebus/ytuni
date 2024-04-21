@@ -35,7 +35,7 @@ const VideoCarousel: React.FC<VideoCarouselProps> = ({ videos }) => {
     >
       <CarouselContent className='-ml-1'>
         {videos.map((video, index) => (
-          <CarouselItem key={index} className='pl-1 basis-1/2 xl:basis-1/3'>
+          <CarouselItem key={index} className='pl-1 basis-1/2 md:basis-1/4'>
             <div className='p-1'>
               <VideoCard
                 id={video.id}

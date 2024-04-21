@@ -2,7 +2,11 @@ import React from 'react';
 import { Dashboard } from '@/components/home/dashboard';
 import { cookies } from 'next/headers';
 
-const page = () => {
+type ShellProps = {
+  children: React.ReactNode;
+};
+
+const Shell = ({ children }: ShellProps) => {
   const layout = cookies().get('react-resizable-panels:layout');
   const collapsed = cookies().get('react-resizable-panels:collapsed');
 
@@ -20,9 +24,11 @@ const page = () => {
         defaultLayout={defaultLayout}
         defaultCollapsed={defaultCollapsed}
         navCollapsedSize={4}
-      />
+      >
+        {children}
+      </Dashboard>
     </div>
   );
 };
 
-export default page;
+export default Shell;
