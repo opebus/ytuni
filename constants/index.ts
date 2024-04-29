@@ -50,15 +50,31 @@ A deeper dive into the mathematics of transformers reveals a world of vectors, m
 - **Exploration and Experimentation:** Engaging with GPT models and exploring their capabilities can provide deeper insights into their potential and limitations, encouraging innovation in AI applications.`;
 
 export const categories = [
-  'Design',
-  'Productivity',
+  'Tutorials',
+  'Technology',
+  'Healthcare',
+  'Business',
+  'History',
+  'Mathematics',
+  'Engineering',
+  'Languages',
+  'Literature',
+  'Art',
+  'Music',
+  'Programming',
+  'Environment',
+  'Politics',
   'Psychology',
-  'Finance',
+  'Law',
+  'Biology',
+  'Astronomy',
+  'Economics',
+  'Sports',
+  'Culture',
   'Philosophy',
-  'AI',
-  'Communication',
-  'Entrepreneurship',
-  'Reading',
+  'Education',
+  'Leadership',
+  'Medicine',
 ];
 
 export const videos = [

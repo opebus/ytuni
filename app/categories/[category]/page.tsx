@@ -1,7 +1,14 @@
-const CategoryView = ({ params }: any) => {
+import Shell from "@/components/home/Shell";
+import { GetVideos } from "./getVideos";
+
+const Page = ({ params }: any) => {
   const { category } = params;
 
-  return <div>Showing videos for: {category}</div>;
+  return (
+    <Shell>
+      <GetVideos category={category} />
+    </Shell>
+  );
 };
 
-export default CategoryView;
+export default Page;

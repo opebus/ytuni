@@ -1,14 +1,14 @@
-'use client';
-import * as React from 'react';
+"use client";
+import * as React from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
-import VideoCard from './VideoCard';
-import Autoplay from 'embla-carousel-autoplay';
+} from "@/components/ui/carousel";
+import VideoCard from "./VideoCard";
+import Autoplay from "embla-carousel-autoplay";
 
 interface Video {
   id: string;
@@ -28,15 +28,15 @@ const VideoCarousel: React.FC<VideoCarouselProps> = ({ videos }) => {
 
   return (
     <Carousel
-      className='container w-full'
+      className="container w-full"
       plugins={[plugin.current]}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
-      <CarouselContent className='-ml-1'>
+      <CarouselContent className="-ml-1">
         {videos.map((video, index) => (
-          <CarouselItem key={index} className='pl-1 basis-1/2 md:basis-1/4'>
-            <div className='p-1'>
+          <CarouselItem key={index} className="pl-1 basis-1/2 md:basis-1/4">
+            <div className="p-1">
               <VideoCard
                 id={video.id}
                 title={video.title}
@@ -45,7 +45,7 @@ const VideoCarousel: React.FC<VideoCarouselProps> = ({ videos }) => {
               />
             </div>
           </CarouselItem>
-        ))}{' '}
+        ))}{" "}
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />

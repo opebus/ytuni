@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
@@ -6,7 +6,12 @@ export async function GET(
 ) {
   const callId = params.call_id;
   const res = await fetch(
-    `https://weichunnn-production--yt-university-app.modal.run/api/status/${callId}`
+    `https://weichunnn-production--yt-university-app.modal.run/api/status/${callId}`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      mode: "no-cors",
+    }
   );
   const data = await res.json();
   return new NextResponse(JSON.stringify(data), { status: res.status });

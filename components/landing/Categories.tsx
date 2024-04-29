@@ -22,7 +22,7 @@ interface IconMapType {
 
 const IconMap: IconMapType = {
   Design: PanelsTopLeft,
-  AI: Bot,
+  Technology: Bot,
   Reading: Book,
   Productivity: Target,
   Psychology: Brain,
