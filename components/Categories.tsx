@@ -1,12 +1,11 @@
-"use client";
+'use client';
 
-import Link from "next/link";
+import Link from 'next/link';
 import {
   LucideIcon,
   Sigma,
   School,
   PanelsTopLeft,
-  Bot,
   Cpu,
   Cross,
   Book,
@@ -32,14 +31,14 @@ import {
   GraduationCap,
   PersonStanding,
   Pill,
-} from "lucide-react";
-import { categories } from "@/constants";
+} from 'lucide-react';
+import { categories } from '@/constants';
 
 interface IconMapType {
   [key: string]: LucideIcon;
 }
 
-export const IconMap = {
+export const IconMap: IconMapType = {
   Tutorials: School,
   Technology: Cpu,
   Healthcare: Cross,

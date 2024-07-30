@@ -1,10 +1,10 @@
-"use client";
+'use client';
 // Import necessary hooks and components
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkToc from "remark-toc";
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkToc from 'remark-toc';
 
 interface VideoDataProps {
   videoID: string;
@@ -13,13 +13,18 @@ interface VideoDataProps {
 const GetVideoData = ({ videoID }: VideoDataProps) => {
   const [video, setVideo] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState<string>('');
 
   useEffect(() => {
     const fetchVideo = async () => {
       try {
         const response = await fetch(
-          `https://weichunnn-production--yt-university-app.modal.run/api/video?id=${videoID}`
+          `https://weichunnn-production--yt-university-app.modal.run/api/video?id=${videoID}`,
+          {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            mode: 'no-cors',
+          }
         );
         const data = await response.json();
         console.log(data);
@@ -27,10 +32,10 @@ const GetVideoData = ({ videoID }: VideoDataProps) => {
         if (data) {
           setVideo(data);
         } else {
-          throw new Error("Video not found");
+          throw new Error('Video not found');
         }
       } catch (err) {
-        setError("Failed to fetch video");
+        setError('Failed to fetch video');
         console.error(err);
       } finally {
         setLoading(false);
@@ -46,7 +51,7 @@ const GetVideoData = ({ videoID }: VideoDataProps) => {
 
   if (error || !video) {
     return (
-      <div className="text-center py-10">{error || "Video not found"}</div>
+      <div className="text-center py-10">{error || 'Video not found'}</div>
     );
   }
 
